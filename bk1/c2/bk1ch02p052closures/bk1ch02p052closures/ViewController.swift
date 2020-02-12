@@ -204,7 +204,9 @@ class ViewController: UIViewController {
             }
             _ = image
         }
-
+        //# why is this one better?
+        //
+        //avoids repeating sz in two places
         do {
             let sz = CGSize(width:45,height:20)
             let image = imageOfSize(sz) {
@@ -234,8 +236,8 @@ class ViewController: UIViewController {
         let maker3 = makeRoundedRectangleMaker3(CGSize(width:45,height:20))
         self.iv.image = maker3(8)
 
-        let image1 = makeRoundedRectangleMaker3(CGSize(width:45,height:20))(8)
-        _ = image1
+        let image1 = makeRoundedRectangleMaker3(CGSize(width:200,height:200))(200)
+        self.iv.image = image1
         
 //        let maker4 = makeRoundedRectangleMaker4(CGSizeMake(45,20))
 //        self.myImageView.image = maker4(8)

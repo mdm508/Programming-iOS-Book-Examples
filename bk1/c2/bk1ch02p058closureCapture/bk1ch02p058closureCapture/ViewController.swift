@@ -1,6 +1,7 @@
 
 import UIKit
 
+
 // the rule for @escaping is about a function passed in and then passed out
 // so, this is legal:
 
@@ -16,7 +17,7 @@ func funcMaker() -> () -> () {
 
 // but this is not legal, without @escaping
 
-func funcPasser(f:@escaping () -> ()) -> () -> () {
+func funcPasser(f:@escaping () -> Void) -> () -> Void {
     return f
 }
 //func funcPasser2(f:() -> ()) -> () -> () {
@@ -44,7 +45,9 @@ class MyClass2 {
     }
 }
 
-
+func curried(x: Int) -> (Int) -> Int{
+    return {a in x + a};
+}
 
 class ViewController: UIViewController {
     
@@ -112,6 +115,10 @@ class ViewController: UIViewController {
             countedGreet2() // count is 2
         }
         
+        do {
+            //curried example
+            print(curried(x: 3)(2))
+        }
         
     }
 

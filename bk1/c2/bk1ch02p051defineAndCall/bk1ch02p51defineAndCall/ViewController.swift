@@ -1,6 +1,7 @@
 
 import UIKit
 
+//example does not seem to work.
 class ViewController: UIViewController {
     
     var content = NSMutableAttributedString()
@@ -8,7 +9,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
     }
     
     func imperative() {
