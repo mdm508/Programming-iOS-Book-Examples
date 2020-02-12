@@ -7,6 +7,7 @@ let sss : NSString = "howdy"
 
 let gOne = 1
 var gTwo = 2
+//#1 why is this not legal
 // gTwo = gOne // "Expressions are not allowed at the top level"
 
 class Dog {
@@ -17,6 +18,7 @@ class Dog {
 
 class Dog2 { func bark() { print("woof") }}
 
+//#2 what effect will this extension to Int have?
 extension Int {
     func sayHello() {
         print("Hello, I'm \(self)")
@@ -27,10 +29,10 @@ func go() {
     let one = 1
     var two = 2
     two = one
-    let _ = (one,two)
+    let _ = (one,two) //#3 what does this line do?
     
     let three = 3
-    // three = one // compile error
+    // three = one // compile error #4 why is this a compile error
     _ = three
 }
 
@@ -47,13 +49,20 @@ class `func` {
     }
 }
 
-
+//#5 what is so silly about this funciton?
 func silly() {
     if true {
         class Cat {}
         var one = 1
         one = one + 1
     }
+}
+
+
+//#5 define a cat class with one method called 'meow' which returns a string
+//#6 add an extension to string class. create method called 'prependHashTag' that adds a hash
+//tags before the string. Hint use self
+extension String {
 }
 
 class ViewController: UIViewController {
@@ -98,9 +107,13 @@ class ViewController: UIViewController {
         // Dog.bark() // error: no, it's an _instance_ method
         // think the error message is weird? see the explanation on p. 127
         
-        let rover = Dog.init() // I noticed this in Swift 1.2, definitely permitted in Swift 2.0
-        // I'm betting that some day the Dog() syntax will be deprecated
+        let rover = Dog.init()
         rover.bark()
+        
+        /*
+        let my_string = "cats for life"
+        print(my_string.prependHashTag())
+        */
         
     }
 
